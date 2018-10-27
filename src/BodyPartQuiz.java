@@ -1,3 +1,4 @@
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
@@ -15,54 +16,81 @@ import javax.swing.JPanel;
 
 public class BodyPartQuiz {
 
-	// 0. You can use the celebrity photos we have placed in the default java package,  
-	// or if you prefer, get celebrity photos from the Internet, place them in the default
+	// 0. You can use the celebrity photos we have placed in the default java
+	// package,
+	// or if you prefer, get celebrity photos from the Internet, place them in the
+	// default
 	// package, and change the names below.
-	
+
 	String firstImage = "src/arnold.jpeg";
 	String secondImage = "src/leonardo.jpeg";
 	String thirdImage = "src/morgan.jpeg";
 	String fourthImage = "src/jack.jpeg";
-	
-	JFrame window = new JFrame();
+
+	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
+
 	private void startQuiz() {
-		int g = -1;
-		String name2 = JOptionPane.showInputDialog("Please state your name.");
-		while(g<0) {
-			name2 = JOptionPane.showInputDialog("Please state your name!!");
-		
-		if(name2.length()>0)	{
-			JOptionPane.showMessageDialog(null,"Thank you!");
-			g++;
-		}
 		// 1. Make an int variable to hold the score.
-			int counter = 0;
+		int counter = 0;
+		initializeGui();
 
-		// 2. Set the size of the window in the initializeGui() method below
-			initializeGui();
-		// 4. Ask the user who this person is and store their answer
-		String guess= JOptionPane.showInputDialog("who is this?");
+		String guess = JOptionPane.showInputDialog("Who is this? Only type in his first name.");
 
-		// 5. Check their answer. If they guessed correctly:
-		// -- Tell them they are right and increase the score by 1
+		if (guess.equalsIgnoreCase("Arnold")) {
+			JOptionPane.showMessageDialog(null, "You got it right!!!");
 
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
+			counter += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "OmegaLUL you got it wrong.");
+		}
+		JOptionPane.showMessageDialog(null, "Your current score is " + counter + ".");
+		showNextImage();
 
-		// 7. Use the showNextImage() method below to get the next image
-		showNextImage();}
-	    	// 8. Show them their current score
+		guess = JOptionPane.showInputDialog("Who is this? Only type in his first name.");
 
-		// 9. .... repeat for all your images.....
+		if (guess.equalsIgnoreCase("leonardo")) {
+			JOptionPane.showMessageDialog(null, "You got it right!!!");
+
+			counter += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "OmegaLUL you got it wrong.");
+		}
+		JOptionPane.showMessageDialog(null, "Your current score is " + counter + ".");
+		showNextImage();
+
+		guess = JOptionPane.showInputDialog("Who is this? Only type in his first name.");
+
+		if (guess.equalsIgnoreCase("morgan")) {
+			JOptionPane.showMessageDialog(null, "You got it right!!!");
+
+			counter += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "OmegaLUL you got it wrong.");
+		}
+		JOptionPane.showMessageDialog(null, "Your current score is " + counter + ".");
+		showNextImage();
+
+		guess = JOptionPane.showInputDialog("Who is this? Only type in his first name.");
+
+		if (guess.equalsIgnoreCase("Jack")) {
+			JOptionPane.showMessageDialog(null, "You got it right!!!");
+
+			counter += 1;
+		} else {
+			JOptionPane.showMessageDialog(null, "OmegaLUL you got it wrong.");
+		}
+		JOptionPane.showMessageDialog(null, "Your current score is " + counter + ".");
+		showNextImage();
+
 
 
 	}
 
 	public void showNextImage() {
 		panel.removeAll();
-		panel.add(getNextImage());		
-		window.setVisible(true);
+		panel.add(getNextImage());
+		frame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
@@ -74,14 +102,14 @@ public class BodyPartQuiz {
 	private void initializeGui() {
 		initializeImageList();
 		imageIterator = imageList.iterator();
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.add(panel);
-		
-		// 3. Change the size of the window so that you can only see part of the image.		
-		window.setSize(500,500);
-		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+
+		// 3. Change the size of the window so that you can only see part of the image.
+		frame.setSize(250, 125);
+
 		showNextImage();
-		
+
 	}
 
 	private JLabel loadImage(String fileName) {
