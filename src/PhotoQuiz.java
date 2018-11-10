@@ -22,13 +22,13 @@ public class PhotoQuiz {
                 quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
 
 		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
-
+                String x = "www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiKiMG_vcreAhUIDHwKHc8aBEoQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.redbubble.com%2Fpeople%2Fmattysus%2Fworks%2F29999062-omegalul-twitch-emote%3Fp%3Dphotographic-print&psig=AOvVaw2yHcDwfvIFu4HvXTe8CBDI&ust=1541961798795111";
 		// 2. create a variable of type "Component" that will hold your image
-
+                Component c;
 		// 3. use the "createImage()" method below to initialize your Component
-
+                c = createImage(x);
 		// 4. add the image to the quiz window
-
+                
 		// 5. call the pack() method on the quiz window
 
 		// 6. ask a question that relates to the image
