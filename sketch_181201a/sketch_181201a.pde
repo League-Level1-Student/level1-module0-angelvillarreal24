@@ -10,11 +10,14 @@ void draw() {
   ellipse(xPos, yPos, 50, 75);
   fill(0);
   rect(mouseX-100, 900, 200, 100);
-  yPos += 10;
+  yPos += 20;
   fill(0, 0, 0);
-  textSize(16);
-  text("Score: " + score, 20, 20);
+  textSize(32);
+  text("Score: " + score, 20, 32);
   if (yPos==1000) {
+    if(score>0){
+     score--; 
+    } 
     yPos = 0;
     xPos = random(100, 900);
   }
@@ -25,6 +28,7 @@ void draw() {
   }
   if (xPos < mouseX+100 && xPos > mouseX-100 && yPos < 1000 && yPos > 900) {
     score++;
-  } else if (xPos > mouseX+100 && xPos < mouseX-100 && yPos < 1000 && yPos > 975) 
-    score--;
-}  
+        yPos = 0;
+    xPos = random(100, 900);
+  } 
+  }
