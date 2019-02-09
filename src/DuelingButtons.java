@@ -61,8 +61,19 @@ public class DuelingButtons implements ActionListener {
 		// Set the PREFERRED size of the leftButton to SMALL
 		/* If the buttonPressed was the rightButton, do the opposite. */
 		buttonPressed.getName();
-		if(buttonPressed.equals(true))
-		
+		if (buttonPressed.equals(leftButton)) {
+			rightButton.setText("NO, Click Me!");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("Click Me!");
+			leftButton.setPreferredSize(SMALL);
+		} else if (buttonPressed.equals(rightButton)) {
+			leftButton.setText("NO, Click Me!");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("Click Me!");
+			rightButton.setPreferredSize(SMALL);
+
+		}
+
 		frame.pack();
 	}
 }

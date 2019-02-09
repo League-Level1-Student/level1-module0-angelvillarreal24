@@ -20,13 +20,13 @@ public class FortuneCookie implements ActionListener {
 		JButton button = new JButton();
 		frame.add(button);
 		button.addActionListener(this);
-
+		frame.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "Woohoo");
+		//JOptionPane.showMessageDialog(null, "Woohoo");
 		int rand = new Random().nextInt(5);
 		if (rand == 0) {
 			JOptionPane.showMessageDialog(null, "The fortune you seek is in another cookie.");
