@@ -2,7 +2,7 @@
 public class OddOrEvenLetsFindOut {
 	
 	public static void main(String[] args) {
-		a(3948293041);
+		a(3);
 	}
 	public static void a(int b) {
 		if(b%2==0) {
